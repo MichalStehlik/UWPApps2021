@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="SecondUWPApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SecondUWPApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="972.5" d:DesignHeight="486">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Slider x:Name="sliOne" ValueChanged="sliOne_ValueChanged" />
+            <TextBlock x:Name="blcOne" Text="TextBlock" TextWrapping="Wrap" />
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Slider x:Name="sliTwo" />
+            <TextBlock x:Name="blcTwo" Text="{Binding Value, ElementName=sliTwo}" TextWrapping="Wrap"/>
+            <TextBlock x:Name="blcTwo2" Text="{Binding Value, ElementName=sliTwo}" TextWrapping="Wrap"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Slider x:Name="sliThree" Value="{Binding Size, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock x:Name="blcThree" Text="{Binding Size}" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Page>
